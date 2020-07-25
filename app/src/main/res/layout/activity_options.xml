@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".OptionsActivity">
+
+    <!-- || Difficulty Option -->
+
+    <TextView
+        android:id="@+id/txt_difficulty"
+        style="@style/label"
+        android:text="@string/difficulty_label"
+        app:fontFamily="@font/oswald_bold"
+        app:layout_constraintBottom_toTopOf="@id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_difficulty">
+
+        <RadioButton
+            android:id="@+id/r_btn_easy"
+            style="@style/radio_button_style"
+            android:buttonTint="@color/colorPrimaryLight"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/easy" />
+
+        <RadioButton
+            android:id="@+id/r_btn_medium"
+            style="@style/radio_button_style"
+            android:buttonTint="@color/colorPrimaryLight"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/medium" />
+
+        <RadioButton
+            android:id="@+id/r_btn_hard"
+            style="@style/radio_button_style"
+            android:buttonTint="@color/colorPrimaryLight"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/hard" />
+
+    </RadioGroup>
+
+    <!-- Trivia Category Option  -->
+
+    <TextView
+        android:id="@+id/txt_categories"
+        style="@style/label"
+        android:layout_marginTop="32dp"
+        android:text="@string/categories_label"
+        app:fontFamily="@font/oswald_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Spinner
+        android:id="@+id/spinner_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_categories" />
+
+    <!-- Done button to return to main menu -->
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/white_button"
+        android:text="@string/done"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/about_text"
+        android:textColor="@color/colorPrimaryLight"
+
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_category" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

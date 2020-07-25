@@ -1,0 +1,38 @@
+<resources>
+    <!-- || Launch screen strings -->
+    <string name="app_name">Quizia</string>
+    <string name="options_label">Options</string>
+    <string name="start_label">Start</string>
+
+    <!-- || Game Options Strings -->
+    <string name="difficulty_label">Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="categories_label">Categories</string>
+    <string name="done">Done</string>
+    <string name="about_text">This app uses the Open Trivia Database to obtain quiz questions.
+        Question difficulty and categories can be selected above</string>
+
+
+    <!-- || Trivia Game Strings -->
+    <string name="trivia_game_next">Next Question</string>
+
+    <!-- || Game End Strings -->
+    <string name="game_end_btn_label">View Score</string>
+    <string name="play_again">Play Again</string>
+    <string name="return_to_menu">Return to Menu</string>
+
+    <!-- || Shared preferences keys -->
+    <string name="shared_preferences_key">com.example.Quizia.PREFERENCE_FILE_KEY</string>
+    <string name="difficulty_key">com.example.Quizia.DIFFICULTY</string>
+    <string name="category_key">com.example.Quizia.CATEGORY</string>
+
+    <!-- || Log Tags -->
+    <string name="error_tag">ERROR</string>
+
+    <!-- || Default messages -->
+    <string name="loading">Loading…</string>
+    <string name="score_placeholder">5/7</string>
+
+</resources>

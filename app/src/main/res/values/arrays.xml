@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Category Spinner options -->
+    <string-array name="category_array">
+        <item>Any Category</item>
+        <item>General Knowledge</item>
+        <item>Books</item>
+        <item>Film</item>
+        <item>Music</item>
+        <item>Television</item>
+        <item>Video Games</item>
+        <item>Board Games</item>
+        <item>Sports</item>
+        <item>History</item>
+        <item>Art</item>
+        <item>Comics</item>
+        <item>Gadgets</item>
+    </string-array>
+</resources>
