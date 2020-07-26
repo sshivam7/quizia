@@ -28,8 +28,8 @@ import java.util.Random;
 /*
     Author: Shivam Sood
     Date: 2020-07-24
-    Description: Class to handle generating a specific URL, used to obtain data from the Open Trivia
-    API, and load the data into a queue
+    Description: Builds a url used to connect to the Open Trivia database and loads the data into
+    a queue.
  */
 
 public class QuestionLoader {
@@ -44,7 +44,7 @@ public class QuestionLoader {
     private Context mContext;
 
     private TextView mTxtQuestion;
-    private Button mBtnOptionOne, mBtnOptionTwo, mBtnOptionThree, mBtnOptionFour;
+    private Button mBtnOptionOne, mBtnOptionTwo, mBtnOptionThree, mBtnOptionFour, mBtnNext;
     private Button mCorrectBtn;
     private boolean mGameOver = false;
 
@@ -57,6 +57,7 @@ public class QuestionLoader {
         mBtnOptionTwo = view.findViewById(R.id.btn_option_two);
         mBtnOptionThree = view.findViewById(R.id.btn_option_three);
         mBtnOptionFour = view.findViewById(R.id.btn_option_four);
+        mBtnNext = view.findViewById(R.id.btn_next);
 
         // Create volley request queue and fetch data
         mQueue = Volley.newRequestQueue(context);
@@ -192,7 +193,7 @@ public class QuestionLoader {
     public void setContent() {
         QuizQuestion newQuestion = mQuestionQueue.poll();
 
-        // Check if queue is empty
+        // Make sure the queue is not empty
         if (newQuestion != null) {
             mTxtQuestion.setText(Html.fromHtml(newQuestion.getQuestion()));
 
@@ -230,9 +231,13 @@ public class QuestionLoader {
                 setBtnText(i, Html.fromHtml(incorrectAns[counter]));
                 counter++;
             }
-        } else {
-            // if queue is empty the set game over to true
-            mGameOver = true;
+
+            // If queue is empty set next button to display view score instead of next question
+            if (mQuestionQueue.size() == 0) {
+                mBtnNext.setText(R.string.game_end_btn_label);
+                // if queue is empty the set game over to true
+                mGameOver = true;
+            }
         }
 
         // Once data has loaded make buttons clickable

@@ -45,7 +45,6 @@ public class TriviaGameActivity extends AppCompatActivity {
         mBtnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mLoader.setContent();
                 // If game is over launch game over activity (send user score)
                 if (mLoader.isGameOver()) {
                     Intent gameOverIntent = new Intent(TriviaGameActivity.this,
@@ -53,6 +52,7 @@ public class TriviaGameActivity extends AppCompatActivity {
                     gameOverIntent.putExtra(EXTRA_SCORE, mNumCorrect);
                     startActivity(gameOverIntent);
                 } else {
+                    mLoader.setContent();
                     // reset buttons
                     mBtnNext.setVisibility(View.GONE);
                     mBtnOptionOne.setBackground(getDrawable(R.drawable.white_button));
@@ -82,9 +82,6 @@ public class TriviaGameActivity extends AppCompatActivity {
         }
         // Allow user to move onto the next question
         mLoader.disableSelection();
-        if (mLoader.isGameOver()) {
-            mBtnNext.setText(R.string.game_end_btn_label);
-        }
         mBtnNext.setVisibility(View.VISIBLE);
     }
 
