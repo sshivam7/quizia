@@ -11,7 +11,7 @@ The data is then read and appended to a base url to fetch questions from the API
 ## Installation
 Clone and import into Android Studio
 ```bash
-git clone https://github.com/ShivamSood17/quizia
+git clone https://github.com/sshivam7/quizia
 ```
 
 ## Author 
